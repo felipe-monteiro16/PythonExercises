@@ -1,0 +1,10 @@
+Lucas Silva;9
+Maria Santos;32
+Pedro Oliveira;64
+Ana Souza;52
+João Pereira;31
+Juliana Costa;86
+Rafael Rodrigues;43
+Carolina Almeida;12
+Gustavo Lima;43
+Mariana Fernandes;100
