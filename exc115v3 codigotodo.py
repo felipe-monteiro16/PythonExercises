@@ -2,25 +2,25 @@
 from time import sleep
 
 """
-    Esse é o mesmo código do diretório exc115v3, contudo em um arquivo só, e, consequentemente, bem menos organizado.
-    Nesse programa será mostrado um menu com três opções do que fazer, na opção de ver as pessoas, irá mostrar as
-cadastradas, na opção de cadastrar uma nova irá pedir o nome e a idade e será adicionada uma nova, e na opção de sair,
-irá sair do sistema, contudo, os dados continuarão salvos mesmo depois que encerrar o programa.
-    O código foi feito como o último projeto do curso de Python até então, tentei fazer com que o programa não desse 
+    Esse ï¿½ o mesmo cï¿½digo do diretï¿½rio exc115v3, contudo em um arquivo sï¿½, e, consequentemente, bem menos organizado.
+    Nesse programa serï¿½ mostrado um menu com trï¿½s opï¿½ï¿½es do que fazer, na opï¿½ï¿½o de ver as pessoas, irï¿½ mostrar as
+cadastradas, na opï¿½ï¿½o de cadastrar uma nova irï¿½ pedir o nome e a idade e serï¿½ adicionada uma nova, e na opï¿½ï¿½o de sair,
+irï¿½ sair do sistema, contudo, os dados continuarï¿½o salvos mesmo depois que encerrar o programa.
+    O cï¿½digo foi feito como o ï¿½ltimo projeto do curso de Python atï¿½ entï¿½o, tentei fazer com que o programa nï¿½o desse 
 erro independente do que a pessoa que estivesse executando fizesse. :)
 """
 
 
 '''
-# Essas são as funções relacionadas ao arquivo e seu tratamento
+Essas sï¿½o as funï¿½ï¿½es relacionadas ao arquivo e seu tratamento
 '''
 
 
 def arquivo_existe(nome):
     """
-    -> Função para verificar se o arquivo txt existe no diretório.
+    -> Funï¿½ï¿½o para verificar se o arquivo txt existe no diretï¿½rio.
     :param nome: Nome do arquivo de texto
-    :return: 'False' se não existir e 'True' se existir.
+    :return: 'False' se nï¿½o existir e 'True' se existir.
     """
     try:
         a = open(nome, 'rt')
@@ -33,7 +33,7 @@ def arquivo_existe(nome):
 
 def criar_arquivo(nome):
     """
-    -> Função para criar novo arquivo de texto (acionada caso ele não exista).
+    -> Funï¿½ï¿½o para criar novo arquivo de texto (acionada caso ele nï¿½o exista).
     :param nome: Nome do arquivo de texto.
     :return: Arquivo de texto criado com mensagem informando o ocorrido
     """
@@ -41,14 +41,14 @@ def criar_arquivo(nome):
         a = open(nome, 'wt+')
         a.close()
     except Exception:
-        print('\033[91mHouve um erro na criação do arquivo\033[m')
+        print('\033[91mHouve um erro na criaï¿½ï¿½o do arquivo\033[m')
     else:
         print(f'Arquivo {nome} criado com sucesso.')
 
 
 def mostra_pessoas():
     """
-    -> Função para mostrar as pessoas cadastradas no sistema, dados salvos no arquivo de texto
+    -> Funï¿½ï¿½o para mostrar as pessoas cadastradas no sistema, dados salvos no arquivo de texto
     :return: As pessoas cadastradas e suas respectivas idades de forma formatada
     """
     contador = 0
@@ -68,8 +68,8 @@ def mostra_pessoas():
 
 def novo_cadastro():
     """
-    -> Função para cadastrar uma nova pessoa e salvar no arquivo de texto.
-    :return: Mensagem mostrando sse o processo deu certo ou não.
+    -> Funï¿½ï¿½o para cadastrar uma nova pessoa e salvar no arquivo de texto.
+    :return: Mensagem mostrando sse o processo deu certo ou nï¿½o.
     """
     lin('NOVO CADASTRO')
     try:
@@ -83,14 +83,14 @@ def novo_cadastro():
         try:
             idade = int(input('Idade: '))
         except KeyboardInterrupt:
-            print(f'\n{c("31")}O usuário preferiu não digitar a idade.{c()}')
+            print(f'\n{c("31")}O usuï¿½rio preferiu nï¿½o digitar a idade.{c()}')
             idade = '-'
             nome = nome_maiusculo(nome)
             with open('cursoemvideo.txt', 'a') as f:
                 f.write(f'{nome};{idade}\n')
             break
         except Exception:
-            print(f'{c("91")}Por Favor, Digite um valor inteiro válido.{c()}')
+            print(f'{c("91")}Por Favor, Digite um valor inteiro vï¿½lido.{c()}')
         else:
             nome = nome_maiusculo(nome)
             with open('cursoemvideo.txt', 'a') as f:
@@ -101,24 +101,24 @@ def novo_cadastro():
 
 
 '''
-Aqui estão as funções para a interface.
+Aqui estï¿½o as funï¿½ï¿½es para a interface.
 '''
 
 
 def c(cor=''):
     """
-    -> Função para adicionar cores nas strings.
-    :param cor: Código numérico da cor
-    :return: Código da cor
+    -> Funï¿½ï¿½o para adicionar cores nas strings.
+    :param cor: Cï¿½digo numï¿½rico da cor
+    :return: Cï¿½digo da cor
     """
     return f'\033[{cor}m'
 
 
 def lin(text):
     """
-    -> Função para fazer um cabeçalho com texto alinhado
-    :param text: texto para fazer cabeçalho
-    :return: mostra um cabeçalho pronto e formatado
+    -> Funï¿½ï¿½o para fazer um cabeï¿½alho com texto alinhado
+    :param text: texto para fazer cabeï¿½alho
+    :return: mostra um cabeï¿½alho pronto e formatado
     """
     print(f'{c("1")}~{c()}' * 60)
     print(f'{c("1")}{text.center(60)}{c()}')
@@ -127,7 +127,7 @@ def lin(text):
 
 def linha():
     """
-    Função para mostrar uma linha de 60 caracteres.
+    Funï¿½ï¿½o para mostrar uma linha de 60 caracteres.
     :return: Linha
     """
     print(f'{c("1")}~{c()}' * 60)
@@ -135,7 +135,7 @@ def linha():
 
 def mostra_menu(menu):
     """
-    -> Função para fazer um menu personalizado.
+    -> Funï¿½ï¿½o para fazer um menu personalizado.
     :param menu: Lista de strings utilizadas no menu
     :return: Um menu personalizado
     """
@@ -147,15 +147,15 @@ def mostra_menu(menu):
 
 def valida_opt():
     """
-    -> Função para validar a opção escolhida no menu, com tratamento de erro
-    para caso não seja digitado uma das opções citadas.
+    -> Funï¿½ï¿½o para validar a opï¿½ï¿½o escolhida no menu, com tratamento de erro
+    para caso nï¿½o seja digitado uma das opï¿½ï¿½es citadas.
     :return: Mensagem de erro para respostas incorretas.
     """
     while True:
         try:
-            opc = int(input(f"{c('33')}Sua Opção: {c()}"))
+            opc = int(input(f"{c('33')}Sua Opï¿½ï¿½o: {c()}"))
         except Exception:
-            print(f"{c('91')}Digite uma Opção válida.")
+            print(f"{c('91')}Digite uma Opï¿½ï¿½o vï¿½lida.")
             sleep(0.5)
         except KeyboardInterrupt:
             opc = 3
@@ -163,9 +163,9 @@ def valida_opt():
             break
         else:
             if 1 != opc != 2 != opc != 3:
-                print(f"{c('91')}O valor \'{opc}\' não está dentro das opções...{c()}")
+                print(f"{c('91')}O valor \'{opc}\' nï¿½o estï¿½ dentro das opï¿½ï¿½es...{c()}")
                 sleep(0.5)
-                print(f"{c('91')}Digite uma Opção válida.")
+                print(f"{c('91')}Digite uma Opï¿½ï¿½o vï¿½lida.")
                 sleep(0.5)
             else:
                 break
@@ -174,8 +174,8 @@ def valida_opt():
 
 def nome_maiusculo(n=''):
     """
-    -> Função para deixar a primeira letra de cada nome/sobrenome maiúsculo,
-    com exceção dos sobrenomes de até duas letras.
+    -> Funï¿½ï¿½o para deixar a primeira letra de cada nome/sobrenome maiï¿½sculo,
+    com exceï¿½ï¿½o dos sobrenomes de atï¿½ duas letras.
     :param n: Nome a ser formatado.
     :return: Nome formatado.
     """
@@ -191,21 +191,21 @@ def nome_maiusculo(n=''):
     return nome.strip()
 
 
-# Criando o arquivo de texto para caso ele não exista
+# Criando o arquivo de texto para caso ele nï¿½o exista
 arq = 'cursoemvideo.txt'
 if not arquivo_existe(arq):
     criar_arquivo(arq)
 
 
 '''
-E aqui está a função para executar todas as outras
+E aqui estï¿½ a funï¿½ï¿½o para executar todas as outras
 '''
 
 
 def geral():
     """
-    -> Função que faz o loop do menu e que ativa as respectivas funções
-    :return: Tudo aquilo que é para mostrar no programa
+    -> Funï¿½ï¿½o que faz o loop do menu e que ativa as respectivas funï¿½ï¿½es
+    :return: Tudo aquilo que ï¿½ para mostrar no programa
     """
     while True:
         # Mostrando o menu principal personalizado
